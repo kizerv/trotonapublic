@@ -8,7 +8,7 @@ IPElastic = "localhost"
 
 def sendToElastic (info):
 	es = Elasticsearch(
-	    hosts = [{'host': 'IPElastic', 'port': 9200}],
+	    hosts = [{'host': IPElastic, 'port': 9200}],
 	    use_ssl = False,
 	    verify_certs = False
 	)
@@ -23,7 +23,7 @@ def sendToElastic (info):
 		# es.index(index='futmondo_mercado', doc_type='_doc', body=mercado)
 
 def getFromDisk():
-	f = open('dict.txt','r')
+	f = open('dict','r')
 	data=f.read()
 	f.close()
 	info = eval(data)
